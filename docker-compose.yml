@@ -1,0 +1,12 @@
+version: "3"
+# More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
+services:
+  web:
+    image: nginx
+    volumes:
+    - ./conf.d:/etc/nginx/conf.d
+    ports:
+    - "8083:80"
+    environment:
+    - NGINX_HOST=foobar.com
+    - NGINX_PORT=80
